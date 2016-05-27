@@ -54,6 +54,7 @@ When you count in decimal (or base-10), each digit represents how many of its pl
 In binary, instead of thinking in powers of 10 (like decimal) we think in powers of two. This is best expressed with a table - 
 
 **Decimal**
+
 |Number|10<sup>4</sup>|10<sup>3</sup>|10<sup>2</sup>|10<sup>1</sup>|10<sup>0</sup>|
 | ---- |:------------ |:------------ |:------------ |:------------ |:------------ |
 |96325 |9             |6             |3             |2             |5             |
