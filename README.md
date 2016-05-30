@@ -55,7 +55,6 @@ There is actually method to this madness - all the seemingly arbitrary numbers w
 This is best expressed with a table - 
 
 |Number|10<sup>4</sup>|10<sup>3</sup>|10<sup>2</sup>|10<sup>1</sup>|10<sup>0</sup>|
-|aka   |10 000s       |1 000s        |100s          |10s           |1s            |
 | ---- |:------------ |:------------ |:------------ |:------------ |:------------ |
 |96325 |9             |6             |3             |2             |5             |
 |10420 |1             |0             |4             |2             |0             |
@@ -66,7 +65,6 @@ Let's take the number 96325 - Using the table, we can see this expands to 9 x 10
 In a similar way, decimal (or base-2) is based around powers of 2. Here's a table similar to the one above - 
 
 |Number|2<sup>4</sup>|2<sup>3</sup>|2<sup>2</sup>|2<sup>1</sup>|2<sup>0</sup>|
-|aka   |16           |8            |4            |2            |1            |
 | ---- |:----------- |:----------- |:----------- |:----------- |:----------- |
 |10110 |1            |0            |1            |1            |0            |
 
