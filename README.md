@@ -44,18 +44,31 @@ You may be wondering what these "r#" things are. We'll cover them in just a bit.
 ## Bits, bytes and bobs
 As you might know, computers read, think and breathe binary. Since we're working with a language that's so close to the metal we'll need to have at least a basic understanding of binary and its sister system, hexadecimal.
 
-### Binary
+### Number Systems
 When you count "normal" numbers (1 up to 10) you are counting in what we call the decimal system. You could think of this as having 10 different states of your (single-digit) number - It could be 0, 1, 2, 3 etc. 
 Computers, however, don't have 10 states of a number. This is because they need to transport numbers around internally with electricity, which only has two states - on or off.
 For this reason, computers don't count in the decimal system - they count in binary. Binary is like any other number system.
 
-#### Place Value
-When you count in decimal (or base-10), each digit represents how many of its place value there is. For example, the number 235 translates to 2 hundreds, 3 tens and 5 ones. For this next bit you'll need to think of 1 as 10<sup>0</sup>, 10 as 10<sup>1</sup> and 100 as 10<sup>2</sup> and so on.
-In binary, instead of thinking in powers of 10 (like decimal) we think in powers of two. This is best expressed with a table - 
-
-**Decimal**
+#### Decimal
+To understand binary and its elegant simplicity, we first need to go over place value in the decimal system. You probably remember place value from primary school - a number split up into its ones, tens, hundreds, etc.
+There is actually method to this madness - all the seemingly arbitrary numbers we split decimals into are actually powers of 10. For example, when we find how many hundreds are in a number we are actually finding how many groups of 10<sup>2</sup> are in a number.
+This is best expressed with a table - 
 
 |Number|10<sup>4</sup>|10<sup>3</sup>|10<sup>2</sup>|10<sup>1</sup>|10<sup>0</sup>|
+|aka   |10 000s       |1 000s        |100s          |10s           |1s            |
 | ---- |:------------ |:------------ |:------------ |:------------ |:------------ |
 |96325 |9             |6             |3             |2             |5             |
 |10420 |1             |0             |4             |2             |0             |
+
+Let's take the number 96325 - Using the table, we can see this expands to 9 x 10<sup>4</sup> + 6 x 10<sup>3</sup> + 3 x 10<sup>2</sup> + 2 x 10<sup>1</sup> + 5 x 10<sup>0</sup>.
+
+#### Binary
+In a similar way, decimal (or base-2) is based around powers of 2. Here's a table similar to the one above - 
+
+|Number|2<sup>4</sup>|2<sup>3</sup>|2<sup>2</sup>|2<sup>1</sup>|2<sup>0</sup>|
+|aka   |16           |8            |4            |2            |1            |
+| ---- |:----------- |:----------- |:----------- |:----------- |:----------- |
+|10110 |1            |0            |1            |1            |0            |
+
+From this table, you can see that binary 10110 is equal to 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 0 x 2<sup>0</sup>.
+If you figure out this equation you'll see that binary 10110 is equal to decimal 22. 
