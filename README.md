@@ -10,7 +10,7 @@ The term "PowerPC" can also apply to the Assembly language used to program the p
 There's a bit of explaining needed for this one, so please bear with me.
 A basic processor will take in an "instruction" and some data, operate on the data based on the instruction, then move on to the next instruction.
 For example, the instruction could be `add` and the data `2` and `3`. In this case, the processor would look at the instruction `add` and knowing that it needs to add the data together, it will, resulting in 5.
-It's worth noting that the processor won't read the instruction as "add" - computers don't understand words, only numbers. For this reason the instruction will likely be represented as "4C" or something similar.
+It's worth noting that the processor won't read the instruction as "add" - computers don't understand words, only numbers. For this reason the instruction will likely be represented as `4C` or something similar.
 Anyway, once the processor has executed an instruction it will then move on to the next one. You may be wondering where our answer (5) goes - this will be covered later! First we need to talk about how we program these instructions into our processor.
 As you may know, there are many programming languages out there, each unique and allowing a programmer to write code in a different way.
 
@@ -35,7 +35,7 @@ This tutorial will cover PowerPC Assembly. Another thing worth noting is the dif
 For example, all of the following lines of Assembly are exactly the same; they are simply written in different syntaxes.
 ```asm
 addi r3, r4, 3 #Intel Syntax (my favourite)
-addi %r3, %r4, 3 #AT&T/GAS Syntax (Used by the GNU Assembler)
+addi %r3, %r4, 3 #AT&T/GAS Syntax (Used by the GNU Assembler and most C compilers)
 addi 3, 4, 3 #"Raw" Assembly (how the computer sees it)
 ```
 See how the different syntaxes change how the code is notated? In most cases you'll be using Intel or AT&T syntax, but it's worth knowing about the third syntax.
@@ -71,4 +71,10 @@ In a similar way, decimal (or base-2) is based around powers of 2. Here's a tabl
 |10110 |1            |0            |1            |1            |0            |
 
 From this table, you can see that binary 10110 is equal to 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 0 x 2<sup>0</sup>.
-If you figure out this equation you'll see that binary 10110 is equal to decimal 22. 
+If you figure out this equation you'll see that binary 10110 is equal to decimal 22.
+This is all very well and good for a computer, but binary is nearly unreadable to a human. You might suggest writing numbers in decimal but this doesn't work too well either - The powers of 10 and the powers of 2 don't line up very often, so it often seems that a number is a completely arbitrary when in decimal but is actually very special while still in its binary form.
+For example, say you have a 8-digit binary number - `11111111`. You can see from the binary that this is the largest number you can store with 8 digits - run it through the table to see what I mean. You can't just add another 1 onto this number without using 9 digits.
+When converted to decimal, however, this number is `255`. In this form, it's quite hard to tell that this is the largest number you can store in 8 bits without simply memorizing it. Why not 256 or 257? As you can see binary->decimal conversions are fairly arbitrary. A better system is needed.
+
+#### Hexadecimal
+Hexadecimal is the solution - 
