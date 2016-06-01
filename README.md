@@ -69,7 +69,6 @@ In a similar way, decimal (or base-2) is based around powers of 2. Here's a tabl
 |10110 |1            |0            |1            |1            |0            |
 
 From this table, you can see that binary 10110 is equal to 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 0 x 2<sup>0</sup>.
-<<<<<<< HEAD
 If you figure out this equation you'll see that binary 10110 is equal to decimal 22.
 This is all very well and good for a computer, but binary is nearly unreadable to a human. You might suggest writing numbers in decimal but this doesn't work too well either - The powers of 10 and the powers of 2 don't line up very often, so it often seems that a number is a completely arbitrary when in decimal but is actually very special while still in its binary form.
 For example, say you have a 8-digit binary number - `11111111`. You can see from the binary that this is the largest number you can store with 8 digits - run it through the table to see what I mean. You can't just add another 1 onto this number without using 9 digits.
@@ -77,6 +76,3 @@ When converted to decimal, however, this number is `255`. In this form, it's qui
 
 #### Hexadecimal
 Hexadecimal is the solution - 
-=======
-If you figure out this equation you'll see that binary 10110 is equal to decimal 22. 
->>>>>>> fc7830ac9d826225739c3f78d577bd15615131de
