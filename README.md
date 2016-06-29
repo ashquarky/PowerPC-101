@@ -4,6 +4,16 @@ This is aimed towards REing Wii U stuff, so keep that in mind.
 
 I go over basically everything, so feel free to skip over some stuff.
 
+## Contents
+1. [So, what's a PowerPC?](#so-whats-a-powerpc)
+2. [What's Assembly?](#whats-assembly)
+3. [Bits, bytes and bobs](#bits-bytes-and-bobs)
+  1. [Number Systems](#number-systems)
+    1. [Decimal](#decimal)
+	2. [Binary](#binary)
+	3. [Hexadecimal](#hexadecimal)
+  2. [Datatypes](#datatypes)
+
 ## So, what's a PowerPC?
 PowerPC (PPC for short) is a type of processor. It was introduced in 1994 and was used in Apple computers up until 2006. Today you can find PowerPC processors in video game consoles, modern Amiga computers, and other specialised situations.
 The term "PowerPC" can also apply to the Assembly language used to program the processor, depending on the context.
