@@ -96,4 +96,20 @@ You have to watch out for hexadecimal since 46 decimal is a vastly different val
 
 ### Datatypes
 High-level language users will know about datatypes - the different names and classifications we apply to all the types of data we can store. For example, the "char" type is used for characters (and strings in C), "int" is for general-purpose numbers, etc. etc.
-However, the PowerPC knows nothing of all this. It only knows numbers. All the datatypes you're familiar with are actually numbers of different lengths. This is why you can do some weird things (such as adding two letters together) in languages like C.
+However, the PowerPC knows nothing of all this. It only knows numbers. All the datatypes you're familiar with are actually numbers of different lengths. This is why you can do some weird things (such as adding two letters together) in languages like C. In addition to all this, Assembly generally notates this with the binary name (byte, word, double word etc.) Here's a table of each datatype (along with the maximum value of each):
+
+It's worth noting that each compiler-linker-processor combo can produce different results. As an example, a "long" is meant to be bigger than an int but in most cases it isn't. You'll need to find out what your compiler uses with the sizeof() macro.
+The values here are from devKitPPC (cross gcc) compiling for a PowerPC 705.
+
+|Datatype|Bitwidth (length)|Max. value|Assembly notation|
+| ------ |:--------------- |:-------- |:--------------- |
+|int     |32 (signed)      |+-7FFFFFFF|dword            |
+|unsigned int|32           |+FFFFFFFF |dword            |
+|short   |16 (signed)      |+-7FFF    |word             |
+|unsigned short|16         |+FFFF     |word             |
+|char    |8 (signed)       |+-7F      |byte             |
+|unsigned char|8           |+FF       |byte             |
+|long    |32/64 (signed)   |see int/long long|see int/long long|
+|unsigned long|32/64       |see int/long long|see int/long long|
+|long long|64 (signed)     |+-7FFFFFFFFFFFFFFF|qword    |
+|unsigned long long|64     |+FFFFFFFFFFFFFFFF|qword     |
