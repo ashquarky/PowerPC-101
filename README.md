@@ -2,6 +2,8 @@
 A from-scratch PowerPC Assembly tutorial, focusing on reverse-engineering (reading code, not writing it). Very WIP.
 This is aimed towards REing Wii U stuff, so keep that in mind.
 
+I go over basically everything, so feel free to skip over some stuff.
+
 ## So, what's a PowerPC?
 PowerPC (PPC for short) is a type of processor. It was introduced in 1994 and was used in Apple computers up until 2006. Today you can find PowerPC processors in video game consoles, modern Amiga computers, and other specialised situations.
 The term "PowerPC" can also apply to the Assembly language used to program the processor, depending on the context.
@@ -102,7 +104,7 @@ It's worth noting that each compiler-linker-processor combo can produce differen
 The values here are from devKitPPC (cross gcc) compiling for a PowerPC 705.
 
 |Datatype|Bitwidth (length)|Max. value|Assembly notation|
-| ------ |:--------------- |:-------- |:--------------- |
+|:------ |:--------------- |:-------- |:--------------- |
 |int     |32 (signed)      |+-7FFFFFFF|dword            |
 |unsigned int|32           |+FFFFFFFF |dword            |
 |short   |16 (signed)      |+-7FFF    |word             |
@@ -113,3 +115,5 @@ The values here are from devKitPPC (cross gcc) compiling for a PowerPC 705.
 |unsigned long|32/64       |see int/long long|see int/long long|
 |long long|64 (signed)     |+-7FFFFFFFFFFFFFFF|qword    |
 |unsigned long long|64     |+FFFFFFFFFFFFFFFF|qword     |
+
+All pointers have the same length as the number of bits in the system. For example, a 32-Bit processor has 32-Bit pointers. The amount of bits in a system also doesn't affect its ability to use larger numbers - a 32-Bit processor can manipulate long longs just fine!
