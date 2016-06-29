@@ -42,7 +42,7 @@ See how the different syntaxes change how the code is notated? In most cases you
 You may be wondering what these "r#" things are. We'll cover them in just a bit.
 
 ## Bits, bytes and bobs
-As you might know, computers read, think and breathe binary. Since we're working with a language that's so close to the metal we'll need to have at least a basic understanding of binary and its sister system, hexadecimal.
+As you might know, computers read, think and breathe binary. Since we're working with a language that's so close to the metal we'll need to have at least a basic understanding of binary and its sister system, hexadecimal. You can skip this section if you already know hexadecimal.
 
 ### Number Systems
 When you count "normal" numbers (1 up to 10) you are counting in what we call the decimal system. You could think of this as having 10 different states of your (single-digit) number - It could be 0, 1, 2, 3 etc. 
@@ -70,9 +70,30 @@ In a similar way, decimal (or base-2) is based around powers of 2. Here's a tabl
 
 From this table, you can see that binary 10110 is equal to 1 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 0 x 2<sup>0</sup>.
 If you figure out this equation you'll see that binary 10110 is equal to decimal 22.
+
+Binary numbers are very rare in code, but in most cases they are notated with a lowercase b on the end (e.g. 10110b). Numbers of a certain length also have special names - 1 digit is a bit, 4 digits is a byte, 16 digits (4 bytes) is a word, 32 digits make a double word, 64 is a quadruple word, and so on. The majority of low-level things use bytes.
+
 This is all very well and good for a computer, but binary is nearly unreadable to a human. You might suggest writing numbers in decimal but this doesn't work too well either - The powers of 10 and the powers of 2 don't line up very often, so it often seems that a number is a completely arbitrary when in decimal but is actually very special while still in its binary form.
 For example, say you have a 8-digit binary number - `11111111`. You can see from the binary that this is the largest number you can store with 8 digits - run it through the table to see what I mean. You can't just add another 1 onto this number without using 9 digits.
 When converted to decimal, however, this number is `255`. In this form, it's quite hard to tell that this is the largest number you can store in 8 bits without simply memorizing it. Why not 256 or 257? As you can see binary->decimal conversions are fairly arbitrary. A better system is needed.
 
 #### Hexadecimal
-Hexadecimal is the solution - 
+Hexadecimal is a system based on 16s (thus base-16). This introduces an interesting issue - Hexadecimal allows you to count up to 16 with a single digit, but we only have 10 single-digit symbols available. For this reason, hexadecimal (or hex) uses the letters A-F as the missing numbers. Here's counting to 20 in hex:
+
+```
+0 1 2 3 4 5 6 7 8 9 A B C D E F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20
+```
+
+This is far more convenient for programmers since the all the powers of 16 are also powers of 2. Here's a table:
+
+|Number|16<sup>4</sup>|16<sup>3</sup>|16<sup>2</sup>|16<sup>1</sup>|16<sup>0</sup>|
+| ---- |:------------ |:------------ |:------------ |:------------ |:------------ |
+|1ABF5 |1             |A (11)        |B (12)        |F (16)        |5             |
+
+Thus, 1ABF5 = 1 x 16<sup>4</sup> + 11 x 16<sup>3</sup> + 12 x 16<sup>2</sup> + 16 x 16<sup>1</sup> + 5 x 16<sup>0</sup> = 109557. This translates well into binary since the largest number you can store in 1 hexadecimal digit (F / 16) is also the largest number you can store in 4 binary digits (1111 / 16).
+
+You have to watch out for hexadecimal since 46 decimal is a vastly different value than 46 hexadecimal. This is solved by notating it differently - hexadecimal (or hex) numbers almost always have an 0x on the front (e.g. 0x1ABF5).
+
+### Datatypes
+High-level language users will know about datatypes - the different names and classifications we apply to all the types of data we can store. For example, the "char" type is used for characters (and strings in C), "int" is for general-purpose numbers, etc. etc.
+However, the PowerPC knows nothing of all this. It only knows numbers. All the datatypes you're familiar with are actually numbers of different lengths. This is why you can do some weird things (such as adding two letters together) in languages like C.
